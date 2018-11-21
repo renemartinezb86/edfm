@@ -1,0 +1,38 @@
+{
+    "name": "Environment",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "deployPipelines",
+            "otherEntityName": "deployPipeline",
+            "otherEntityRelationshipName": "environment"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "deployments",
+            "otherEntityName": "deployment",
+            "otherEntityRelationshipName": "environment"
+        },
+        {
+            "relationshipName": "environmentType",
+            "otherEntityName": "environmentType",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181121205741",
+    "entityTableName": "environment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,38 @@
+{
+    "name": "ApplicationVersion",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "application",
+            "otherEntityName": "application",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "versionRelations",
+            "otherEntityName": "applicationVersionRelation",
+            "otherEntityRelationshipName": "applicationVersion"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "deployments",
+            "otherEntityName": "deployment",
+            "otherEntityRelationshipName": "applicationVersion"
+        }
+    ],
+    "changelogDate": "20181121205739",
+    "entityTableName": "application_version",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

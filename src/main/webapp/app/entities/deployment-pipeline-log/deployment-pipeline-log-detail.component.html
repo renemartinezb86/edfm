@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="deploymentPipelineLog">
+            <h2><span jhiTranslate="edfmApp.deploymentPipelineLog.detail.title">Deployment Pipeline Log</span> {{deploymentPipelineLog.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.deploymentPipelineLog.name">Name</span></dt>
+                <dd>
+                    <span>{{deploymentPipelineLog.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.deploymentPipelineLog.url">Url</span></dt>
+                <dd>
+                    <span>{{deploymentPipelineLog.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.deploymentPipelineLog.description">Description</span></dt>
+                <dd>
+                    <span>{{deploymentPipelineLog.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.deploymentPipelineLog.status">Status</span></dt>
+                <dd>
+                    <span>{{deploymentPipelineLog.status}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/deployment-pipeline-log', deploymentPipelineLog.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

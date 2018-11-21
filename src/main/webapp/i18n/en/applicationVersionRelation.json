@@ -1,0 +1,23 @@
+{
+    "edfmApp": {
+        "applicationVersionRelation": {
+            "home": {
+                "title": "Application Version Relations",
+                "createLabel": "Create a new Application Version Relation",
+                "createOrEditLabel": "Create or edit a Application Version Relation"
+            },
+            "created": "A new Application Version Relation is created with identifier {{ param }}",
+            "updated": "A Application Version Relation is updated with identifier {{ param }}",
+            "deleted": "A Application Version Relation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Application Version Relation {{ id }}?"
+            },
+            "detail": {
+                "title": "Application Version Relation"
+            },
+            "name": "Name",
+            "version": "Version",
+            "applicationVersion": "Application Version"
+        }
+    }
+}

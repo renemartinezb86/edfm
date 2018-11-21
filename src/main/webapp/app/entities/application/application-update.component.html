@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-application-heading" jhiTranslate="edfmApp.application.home.createOrEditLabel">Create or edit a Application</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!application.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="application.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.application.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="application.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.application.program" for="field_program">Program</label>
+                    <select class="form-control" name="program" [(ngModel)]="application.program" id="field_program" >
+                        <option value="PREPAID">{{'edfmApp.Program.PREPAID' | translate}}</option>
+                        <option value="POSTPAID">{{'edfmApp.Program.POSTPAID' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.application.gitURL" for="field_gitURL">Git URL</label>
+                    <input type="text" class="form-control" name="gitURL" id="field_gitURL"
+                        [(ngModel)]="application.gitURL" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.application.gitToken" for="field_gitToken">Git Token</label>
+                    <input type="text" class="form-control" name="gitToken" id="field_gitToken"
+                        [(ngModel)]="application.gitToken" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.application.jiraURL" for="field_jiraURL">Jira URL</label>
+                    <input type="text" class="form-control" name="jiraURL" id="field_jiraURL"
+                        [(ngModel)]="application.jiraURL" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.application.jiraToken" for="field_jiraToken">Jira Token</label>
+                    <input type="text" class="form-control" name="jiraToken" id="field_jiraToken"
+                        [(ngModel)]="application.jiraToken" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="edfmApp.deployPipeline.home.title">Deploy Pipelines</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-deploy-pipeline" [routerLink]="['/deploy-pipeline/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="edfmApp.deployPipeline.home.createLabel">
+            Create new Deploy Pipeline
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="deployPipelines">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="edfmApp.deployPipeline.name">Name</span></th>
+            <th><span jhiTranslate="edfmApp.deployPipeline.url">Url</span></th>
+            <th><span jhiTranslate="edfmApp.deployPipeline.username">Username</span></th>
+            <th><span jhiTranslate="edfmApp.deployPipeline.password">Password</span></th>
+            <th><span jhiTranslate="edfmApp.deployPipeline.jobName">Job Name</span></th>
+            <th><span jhiTranslate="edfmApp.deployPipeline.application">Application</span></th>
+            <th><span jhiTranslate="edfmApp.deployPipeline.environment">Environment</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let deployPipeline of deployPipelines ;trackBy: trackId">
+                <td><a [routerLink]="['/deploy-pipeline', deployPipeline.id, 'view' ]">{{deployPipeline.id}}</a></td>
+                <td>{{deployPipeline.name}}</td>
+                <td>{{deployPipeline.url}}</td>
+                <td>{{deployPipeline.username}}</td>
+                <td>{{deployPipeline.password}}</td>
+                <td>{{deployPipeline.jobName}}</td>
+                <td>
+                    <div *ngIf="deployPipeline.application">
+                        <a [routerLink]="['../application', deployPipeline.application?.id, 'view' ]" >{{deployPipeline.application?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="deployPipeline.environment">
+                        <a [routerLink]="['../environment', deployPipeline.environment?.id, 'view' ]" >{{deployPipeline.environment?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/deploy-pipeline', deployPipeline.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/deploy-pipeline', deployPipeline.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'deploy-pipeline/'+ deployPipeline.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

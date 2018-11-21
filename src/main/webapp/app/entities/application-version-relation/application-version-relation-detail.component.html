@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="applicationVersionRelation">
+            <h2><span jhiTranslate="edfmApp.applicationVersionRelation.detail.title">Application Version Relation</span> {{applicationVersionRelation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.applicationVersionRelation.name">Name</span></dt>
+                <dd>
+                    <span>{{applicationVersionRelation.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.applicationVersionRelation.version">Version</span></dt>
+                <dd>
+                    <span>{{applicationVersionRelation.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.applicationVersionRelation.applicationVersion">Application Version</span></dt>
+                <dd>
+                    <div *ngIf="applicationVersionRelation.applicationVersion">
+                        <a [routerLink]="['/application-version', applicationVersionRelation.applicationVersion?.id, 'view']">{{applicationVersionRelation.applicationVersion?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/application-version-relation', applicationVersionRelation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

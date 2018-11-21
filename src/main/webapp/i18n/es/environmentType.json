@@ -1,0 +1,22 @@
+{
+    "edfmApp": {
+        "environmentType": {
+            "home": {
+                "title": "Environment Types",
+                "createLabel": "Crear nuevo Environment Type",
+                "createOrEditLabel": "Crear o editar Environment Type"
+            },
+            "created": "Un nuevo Environment Type ha sido creado con el identificador {{ param }}",
+            "updated": "Un Environment Type ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Environment Type ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Environment Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Environment Type"
+            },
+            "name": "Name",
+            "environments": "Environments"
+        }
+    }
+}

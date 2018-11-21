@@ -1,0 +1,24 @@
+{
+    "edfmApp": {
+        "applicationVersion": {
+            "home": {
+                "title": "Application Versions",
+                "createLabel": "Create a new Application Version",
+                "createOrEditLabel": "Create or edit a Application Version"
+            },
+            "created": "A new Application Version is created with identifier {{ param }}",
+            "updated": "A Application Version is updated with identifier {{ param }}",
+            "deleted": "A Application Version is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Application Version {{ id }}?"
+            },
+            "detail": {
+                "title": "Application Version"
+            },
+            "name": "Name",
+            "application": "Application",
+            "versionRelations": "Version Relations",
+            "deployments": "Deployments"
+        }
+    }
+}

@@ -38,6 +38,21 @@ public class CacheConfiguration {
             cm.createCache(io.github.jhipster.application.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Application.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Application.class.getName() + ".deployPipelines", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Application.class.getName() + ".applicationVersions", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ApplicationVersion.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ApplicationVersion.class.getName() + ".versionRelations", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ApplicationVersion.class.getName() + ".deployments", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.ApplicationVersionRelation.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Environment.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Environment.class.getName() + ".deployPipelines", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Environment.class.getName() + ".deployments", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.EnvironmentType.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.EnvironmentType.class.getName() + ".environments", jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.DeployPipeline.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.Deployment.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.DeploymentPipelineLog.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

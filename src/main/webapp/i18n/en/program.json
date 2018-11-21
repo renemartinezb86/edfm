@@ -1,0 +1,9 @@
+{
+    "edfmApp": {
+        "Program": {
+            "null": "",
+            "PREPAID": "PREPAID",
+            "POSTPAID": "POSTPAID"
+        }
+    }
+}

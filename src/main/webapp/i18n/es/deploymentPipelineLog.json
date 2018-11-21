@@ -1,0 +1,24 @@
+{
+    "edfmApp": {
+        "deploymentPipelineLog": {
+            "home": {
+                "title": "Deployment Pipeline Logs",
+                "createLabel": "Crear nuevo Deployment Pipeline Log",
+                "createOrEditLabel": "Crear o editar Deployment Pipeline Log"
+            },
+            "created": "Un nuevo Deployment Pipeline Log ha sido creado con el identificador {{ param }}",
+            "updated": "Un Deployment Pipeline Log ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Deployment Pipeline Log ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Deployment Pipeline Log {{ id }}?"
+            },
+            "detail": {
+                "title": "Deployment Pipeline Log"
+            },
+            "name": "Name",
+            "url": "Url",
+            "description": "Description",
+            "status": "Status"
+        }
+    }
+}
