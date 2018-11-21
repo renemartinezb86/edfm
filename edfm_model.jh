@@ -1,0 +1,73 @@
+enum Program {
+	PREPAID, POSTPAID
+}
+
+entity Application {
+	name String,
+    program Program,
+  	gitURL String,
+    gitToken String,
+    jiraURL String,
+    jiraToken String
+}
+
+
+entity ApplicationVersion {
+	name String
+}
+
+entity ApplicationVersionRelation {
+	name String,
+    version String
+}
+
+entity Environment {
+	name String
+}
+
+entity EnvironmentType {
+    name String
+}
+
+entity DeployPipeline {
+	name String,
+    url String, 
+    username String,
+    password String,
+    jobName String
+}
+
+entity Deployment{
+	name String,
+    date Instant
+}
+
+entity DeploymentPipelineLog{
+ name String,
+ url String,
+ description String,
+ status String
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+    Application{deployPipelines} to DeployPipeline,
+    Application{applicationVersions} to ApplicationVersion,
+    ApplicationVersion{versionRelations} to ApplicationVersionRelation,
+    Environment{deployPipelines} to DeployPipeline,
+    EnvironmentType{environments} to Environment,
+    ApplicationVersion{deployments} to Deployment,
+    Environment{deployments} to Deployment
+
+}
+
+relationship OneToOne {
+Deployment{deploymentLogs} to DeploymentPipelineLog
+}
+
+filter Deployment
+paginate Deployment with infinite-scroll
+
+
+
+

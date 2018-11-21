@@ -1,0 +1,26 @@
+{
+    "name": "EnvironmentType",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "environments",
+            "otherEntityName": "environment",
+            "otherEntityRelationshipName": "environmentType"
+        }
+    ],
+    "changelogDate": "20181121205742",
+    "entityTableName": "environment_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

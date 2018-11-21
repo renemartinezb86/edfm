@@ -1,0 +1,44 @@
+{
+    "name": "Deployment",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "applicationVersion",
+            "otherEntityName": "applicationVersion",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "environment",
+            "otherEntityName": "environment",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "deploymentLogs",
+            "otherEntityName": "deploymentPipelineLog",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deployment"
+        }
+    ],
+    "changelogDate": "20181121205744",
+    "entityTableName": "deployment",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

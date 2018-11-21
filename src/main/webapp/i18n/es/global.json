@@ -8,6 +8,14 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entidades",
+                "application": "Application",
+                "applicationVersion": "Application Version",
+                "applicationVersionRelation": "Application Version Relation",
+                "environment": "Environment",
+                "environmentType": "Environment Type",
+                "deployPipeline": "Deploy Pipeline",
+                "deployment": "Deployment",
+                "deploymentPipelineLog": "Deployment Pipeline Log",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

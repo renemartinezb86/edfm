@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="deployment">
+            <h2><span jhiTranslate="edfmApp.deployment.detail.title">Deployment</span> {{deployment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.deployment.name">Name</span></dt>
+                <dd>
+                    <span>{{deployment.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.deployment.date">Date</span></dt>
+                <dd>
+                    <span>{{deployment.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.deployment.applicationVersion">Application Version</span></dt>
+                <dd>
+                    <div *ngIf="deployment.applicationVersion">
+                        <a [routerLink]="['/application-version', deployment.applicationVersion?.id, 'view']">{{deployment.applicationVersion?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.deployment.environment">Environment</span></dt>
+                <dd>
+                    <div *ngIf="deployment.environment">
+                        <a [routerLink]="['/environment', deployment.environment?.id, 'view']">{{deployment.environment?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.deployment.deploymentLogs">Deployment Logs</span></dt>
+                <dd>
+                    <div *ngIf="deployment.deploymentLogs">
+                        <a [routerLink]="['/deployment-pipeline-log', deployment.deploymentLogs?.id, 'view']">{{deployment.deploymentLogs?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/deployment', deployment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

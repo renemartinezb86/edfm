@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-deployment-heading" jhiTranslate="edfmApp.deployment.home.createOrEditLabel">Create or edit a Deployment</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!deployment.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="deployment.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.deployment.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="deployment.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.deployment.date" for="field_date">Date</label>
+                    <div class="d-flex">
+                        <input id="field_date" type="datetime-local" class="form-control" name="date" [(ngModel)]="date"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.deployment.applicationVersion" for="field_applicationVersion">Application Version</label>
+                    <select class="form-control" id="field_applicationVersion" name="applicationVersion" [(ngModel)]="deployment.applicationVersion" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="applicationVersionOption.id === deployment.applicationVersion?.id ? deployment.applicationVersion : applicationVersionOption" *ngFor="let applicationVersionOption of applicationversions; trackBy: trackApplicationVersionById">{{applicationVersionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.deployment.environment" for="field_environment">Environment</label>
+                    <select class="form-control" id="field_environment" name="environment" [(ngModel)]="deployment.environment" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="environmentOption.id === deployment.environment?.id ? deployment.environment : environmentOption" *ngFor="let environmentOption of environments; trackBy: trackEnvironmentById">{{environmentOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.deployment.deploymentLogs" for="field_deploymentLogs">Deployment Logs</label>
+                    <select class="form-control" id="field_deploymentLogs" name="deploymentLogs" [(ngModel)]="deployment.deploymentLogs">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="deploymentPipelineLogOption.id === deployment.deploymentLogs?.id ? deployment.deploymentLogs : deploymentPipelineLogOption" *ngFor="let deploymentPipelineLogOption of deploymentlogs; trackBy: trackDeploymentPipelineLogById">{{deploymentPipelineLogOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

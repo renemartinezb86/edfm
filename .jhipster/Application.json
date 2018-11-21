@@ -1,0 +1,53 @@
+{
+    "name": "Application",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "program",
+            "fieldType": "Program",
+            "fieldValues": "PREPAID,POSTPAID"
+        },
+        {
+            "fieldName": "gitURL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gitToken",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jiraURL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jiraToken",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "deployPipelines",
+            "otherEntityName": "deployPipeline",
+            "otherEntityRelationshipName": "application"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "applicationVersions",
+            "otherEntityName": "applicationVersion",
+            "otherEntityRelationshipName": "application"
+        }
+    ],
+    "changelogDate": "20181121205738",
+    "entityTableName": "application",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

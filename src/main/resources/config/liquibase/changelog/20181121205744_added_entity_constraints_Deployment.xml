@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Deployment.
+    -->
+    <changeSet id="20181121205744-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="application_version_id"
+                                 baseTableName="deployment"
+                                 constraintName="fk_deployment_application_version_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="application_version"/>
+
+        <addForeignKeyConstraint baseColumnNames="environment_id"
+                                 baseTableName="deployment"
+                                 constraintName="fk_deployment_environment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="environment"/>
+
+        <addForeignKeyConstraint baseColumnNames="deployment_logs_id"
+                                 baseTableName="deployment"
+                                 constraintName="fk_deployment_deployment_logs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="deployment_pipeline_log"/>
+
+    </changeSet>
+</databaseChangeLog>

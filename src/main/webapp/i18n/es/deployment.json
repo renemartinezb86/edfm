@@ -1,0 +1,25 @@
+{
+    "edfmApp": {
+        "deployment": {
+            "home": {
+                "title": "Deployments",
+                "createLabel": "Crear nuevo Deployment",
+                "createOrEditLabel": "Crear o editar Deployment"
+            },
+            "created": "Un nuevo Deployment ha sido creado con el identificador {{ param }}",
+            "updated": "Un Deployment ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Deployment ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Deployment {{ id }}?"
+            },
+            "detail": {
+                "title": "Deployment"
+            },
+            "name": "Name",
+            "date": "Date",
+            "applicationVersion": "Application Version",
+            "environment": "Environment",
+            "deploymentLogs": "Deployment Logs"
+        }
+    }
+}

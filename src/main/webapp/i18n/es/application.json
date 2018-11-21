@@ -1,0 +1,28 @@
+{
+    "edfmApp": {
+        "application": {
+            "home": {
+                "title": "Applications",
+                "createLabel": "Crear nuevo Application",
+                "createOrEditLabel": "Crear o editar Application"
+            },
+            "created": "Un nuevo Application ha sido creado con el identificador {{ param }}",
+            "updated": "Un Application ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Application ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Application {{ id }}?"
+            },
+            "detail": {
+                "title": "Application"
+            },
+            "name": "Name",
+            "program": "Program",
+            "gitURL": "Git URL",
+            "gitToken": "Git Token",
+            "jiraURL": "Jira URL",
+            "jiraToken": "Jira Token",
+            "deployPipelines": "Deploy Pipelines",
+            "applicationVersions": "Application Versions"
+        }
+    }
+}

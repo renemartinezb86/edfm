@@ -1,0 +1,27 @@
+{
+    "edfmApp": {
+        "deployPipeline": {
+            "home": {
+                "title": "Deploy Pipelines",
+                "createLabel": "Create a new Deploy Pipeline",
+                "createOrEditLabel": "Create or edit a Deploy Pipeline"
+            },
+            "created": "A new Deploy Pipeline is created with identifier {{ param }}",
+            "updated": "A Deploy Pipeline is updated with identifier {{ param }}",
+            "deleted": "A Deploy Pipeline is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Deploy Pipeline {{ id }}?"
+            },
+            "detail": {
+                "title": "Deploy Pipeline"
+            },
+            "name": "Name",
+            "url": "Url",
+            "username": "Username",
+            "password": "Password",
+            "jobName": "Job Name",
+            "application": "Application",
+            "environment": "Environment"
+        }
+    }
+}
