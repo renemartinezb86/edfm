@@ -1,0 +1,157 @@
+entity BucoVersion {
+	name String,
+    fileName String,
+    createdDate Instant
+}
+
+entity BucoSheet {
+	sheetName String,
+    sheetType SheetType
+}
+
+entity ProductOffering {
+	poId String,
+	name String,
+	comercialName String
+}
+
+entity POCharacteristic {
+	name String,
+	value String
+}
+//TODO What are the service characteristics
+entity Service{
+	name String,
+    serviceType ServiceType
+}
+
+entity CfssPop{
+    cfssPopType CfssPopType,
+    characteristic String,
+    value String,
+}
+
+entity Rule{
+	ruleId String,
+    ruleType RuleType,
+    definition String,
+    scenario String,
+    detail String
+}
+
+entity NetworkResource{
+	name String
+}
+
+entity NetworkParameter{
+	name String,
+    type String,
+    value String
+}
+
+entity Resource{
+	name String,
+    resourceType ResourceType,
+    relatedItem String,
+    relatedItemCharacteristic String
+}
+
+entity PoPrice{
+	poPriceType PoPriceType,
+    amount Double,
+    paymentType PaymentType,
+    showInBill Boolean,
+    payInAdvance Boolean,
+    billOnSuspension Boolean,
+    multiDiscount Boolean
+}
+
+entity FreeUnit{
+	name String,
+    freeUnitType FreeUnitType,
+    units String,
+    amount Double
+    
+}
+
+entity ChargingSystem{
+	serviceClassId String,
+    offerTemplate String,
+    characteristicName String
+}
+
+entity Bscs{
+	services String
+}
+
+enum SheetType {
+    PO, TEMPLATE, CONFIG, RULE
+}
+
+enum ServiceType {
+    Basic, Barring, Service, Voice, SMS, Data, LDIVoice,
+    LDISMS, VoiceRoaming, SMSRoaming, DataRoaming,
+    RoamingTAPIN, VASBalance
+}
+
+enum RuleType {
+    Availability, Validation, Automatic, Price, Eligibility
+}
+
+enum ResourceType {
+    Availability, Validation, Automatic, Price, Eligibility
+}
+
+enum CfssPopType {
+	Usage
+}
+
+enum PoPriceType {
+	Recurring, OneShot
+}
+
+enum PaymentType {
+	Cash, Bill
+}
+
+enum FreeUnitType {
+	RecurringFee, SMS, Data, AutoRefill, RRSS
+}
+
+relationship ManyToMany {
+    ProductOffering{rules(ruleId)} 
+    to Rule{productOffering(poId)},
+    ProductOffering{resource(name)} 
+    to Resource{productOffering(poId)},
+    NetworkResource{networkParameter(name)} 
+    to NetworkParameter{networkResource(name)},
+    ProductOffering{networkResources(name)} 
+    to NetworkResource{productOffering(poId)}
+    ProductOffering{service(name)} 
+    to Service{productOffering(poId)},
+    ProductOffering{cfssPop(value)}
+    to CfssPop{productOffering(poId)},
+    ProductOffering{freeUnit(name)}
+    to FreeUnit{productOffering(poId)},
+}
+
+relationship ManyToOne {
+	BucoSheet{bucoVersion(name)} to BucoVersion,
+    ProductOffering{bucoSheet(name)} to BucoSheet,
+    POCharacteristic{productOffering(poId)} to ProductOffering,
+    //ProductOffering{relations(poId)} to ProductOffering{parent}
+}
+
+relationship OneToOne {
+	ProductOffering{poPrice(value)}
+    to PoPrice{productOffering(poId)}
+    ChargingSystem{service(name)}
+    to Service{chargingSystem(offerTemplate)}
+    Bscs{service(name)}
+    to Service{bscs(services)}
+    ChargingSystem{freeUnit(name)}
+    to FreeUnit{chargingSystem(offerTemplate)}
+}
+
+paginate * with infinite-scroll
+filter *
