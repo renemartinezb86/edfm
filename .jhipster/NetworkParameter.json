@@ -1,0 +1,35 @@
+{
+    "name": "NetworkParameter",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "networkResource",
+            "otherEntityName": "networkResource",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "networkParameter"
+        }
+    ],
+    "changelogDate": "20181121205445",
+    "entityTableName": "network_parameter",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

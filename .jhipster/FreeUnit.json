@@ -1,0 +1,47 @@
+{
+    "name": "FreeUnit",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "freeUnitType",
+            "fieldType": "FreeUnitType",
+            "fieldValues": "RecurringFee,SMS,Data,AutoRefill,RRSS"
+        },
+        {
+            "fieldName": "units",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "chargingSystem",
+            "otherEntityName": "chargingSystem",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "freeUnit"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "productOffering",
+            "otherEntityName": "productOffering",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "freeUnit"
+        }
+    ],
+    "changelogDate": "20181121205448",
+    "entityTableName": "free_unit",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

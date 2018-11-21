@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-po-price-heading" jhiTranslate="edfmApp.poPrice.home.createOrEditLabel">Create or edit a Po Price</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!poPrice.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="poPrice.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.poPrice.poPriceType" for="field_poPriceType">Po Price Type</label>
+                    <select class="form-control" name="poPriceType" [(ngModel)]="poPrice.poPriceType" id="field_poPriceType" >
+                        <option value="Recurring">{{'edfmApp.PoPriceType.Recurring' | translate}}</option>
+                        <option value="OneShot">{{'edfmApp.PoPriceType.OneShot' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.poPrice.amount" for="field_amount">Amount</label>
+                    <input type="number" class="form-control" name="amount" id="field_amount"
+                        [(ngModel)]="poPrice.amount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.poPrice.paymentType" for="field_paymentType">Payment Type</label>
+                    <select class="form-control" name="paymentType" [(ngModel)]="poPrice.paymentType" id="field_paymentType" >
+                        <option value="Cash">{{'edfmApp.PaymentType.Cash' | translate}}</option>
+                        <option value="Bill">{{'edfmApp.PaymentType.Bill' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.poPrice.showInBill" for="field_showInBill">Show In Bill</label>
+                    <input type="checkbox" class="form-control" name="showInBill" id="field_showInBill"
+                        [(ngModel)]="poPrice.showInBill" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.poPrice.payInAdvance" for="field_payInAdvance">Pay In Advance</label>
+                    <input type="checkbox" class="form-control" name="payInAdvance" id="field_payInAdvance"
+                        [(ngModel)]="poPrice.payInAdvance" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.poPrice.billOnSuspension" for="field_billOnSuspension">Bill On Suspension</label>
+                    <input type="checkbox" class="form-control" name="billOnSuspension" id="field_billOnSuspension"
+                        [(ngModel)]="poPrice.billOnSuspension" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.poPrice.multiDiscount" for="field_multiDiscount">Multi Discount</label>
+                    <input type="checkbox" class="form-control" name="multiDiscount" id="field_multiDiscount"
+                        [(ngModel)]="poPrice.multiDiscount" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

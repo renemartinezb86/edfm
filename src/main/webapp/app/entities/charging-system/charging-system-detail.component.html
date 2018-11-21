@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="chargingSystem">
+            <h2><span jhiTranslate="edfmApp.chargingSystem.detail.title">Charging System</span> {{chargingSystem.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.chargingSystem.serviceClassId">Service Class Id</span></dt>
+                <dd>
+                    <span>{{chargingSystem.serviceClassId}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.chargingSystem.offerTemplate">Offer Template</span></dt>
+                <dd>
+                    <span>{{chargingSystem.offerTemplate}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.chargingSystem.characteristicName">Characteristic Name</span></dt>
+                <dd>
+                    <span>{{chargingSystem.characteristicName}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.chargingSystem.service">Service</span></dt>
+                <dd>
+                    <div *ngIf="chargingSystem.service">
+                        <a [routerLink]="['/service', chargingSystem.service?.id, 'view']">{{chargingSystem.service?.name}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.chargingSystem.freeUnit">Free Unit</span></dt>
+                <dd>
+                    <div *ngIf="chargingSystem.freeUnit">
+                        <a [routerLink]="['/free-unit', chargingSystem.freeUnit?.id, 'view']">{{chargingSystem.freeUnit?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/charging-system', chargingSystem.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-product-offering-heading" jhiTranslate="edfmApp.productOffering.home.createOrEditLabel">Create or edit a Product Offering</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!productOffering.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="productOffering.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.productOffering.poId" for="field_poId">Po Id</label>
+                    <input type="text" class="form-control" name="poId" id="field_poId"
+                        [(ngModel)]="productOffering.poId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.productOffering.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="productOffering.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.productOffering.comercialName" for="field_comercialName">Comercial Name</label>
+                    <input type="text" class="form-control" name="comercialName" id="field_comercialName"
+                        [(ngModel)]="productOffering.comercialName" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.productOffering.poPrice" for="field_poPrice">Po Price</label>
+                    <select class="form-control" id="field_poPrice" name="poPrice" [(ngModel)]="productOffering.poPrice">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="poPriceOption.id === productOffering.poPrice?.id ? productOffering.poPrice : poPriceOption" *ngFor="let poPriceOption of poprices; trackBy: trackPoPriceById">{{poPriceOption.value}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.productOffering.bucoSheet" for="field_bucoSheet">Buco Sheet</label>
+                    <select class="form-control" id="field_bucoSheet" name="bucoSheet" [(ngModel)]="productOffering.bucoSheet" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="bucoSheetOption.id === productOffering.bucoSheet?.id ? productOffering.bucoSheet : bucoSheetOption" *ngFor="let bucoSheetOption of bucosheets; trackBy: trackBucoSheetById">{{bucoSheetOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="edfmApp.productOffering.rules" for="field_rules">Rules</label>
+                    <select class="form-control" id="field_rules" multiple name="rules" [(ngModel)]="productOffering.rules">
+                        <option [ngValue]="getSelected(productOffering.rules, ruleOption)" *ngFor="let ruleOption of rules; trackBy: trackRuleById">{{ruleOption.ruleId}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="edfmApp.productOffering.resource" for="field_resource">Resource</label>
+                    <select class="form-control" id="field_resource" multiple name="resource" [(ngModel)]="productOffering.resources">
+                        <option [ngValue]="getSelected(productOffering.resources, resourceOption)" *ngFor="let resourceOption of resources; trackBy: trackResourceById">{{resourceOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="edfmApp.productOffering.networkResources" for="field_networkResources">Network Resources</label>
+                    <select class="form-control" id="field_networkResources" multiple name="networkResources" [(ngModel)]="productOffering.networkResources">
+                        <option [ngValue]="getSelected(productOffering.networkResources, networkResourceOption)" *ngFor="let networkResourceOption of networkresources; trackBy: trackNetworkResourceById">{{networkResourceOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="edfmApp.productOffering.service" for="field_service">Service</label>
+                    <select class="form-control" id="field_service" multiple name="service" [(ngModel)]="productOffering.services">
+                        <option [ngValue]="getSelected(productOffering.services, serviceOption)" *ngFor="let serviceOption of services; trackBy: trackServiceById">{{serviceOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="edfmApp.productOffering.cfssPop" for="field_cfssPop">Cfss Pop</label>
+                    <select class="form-control" id="field_cfssPop" multiple name="cfssPop" [(ngModel)]="productOffering.cfssPops">
+                        <option [ngValue]="getSelected(productOffering.cfssPops, cfssPopOption)" *ngFor="let cfssPopOption of cfsspops; trackBy: trackCfssPopById">{{cfssPopOption.value}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="edfmApp.productOffering.freeUnit" for="field_freeUnit">Free Unit</label>
+                    <select class="form-control" id="field_freeUnit" multiple name="freeUnit" [(ngModel)]="productOffering.freeUnits">
+                        <option [ngValue]="getSelected(productOffering.freeUnits, freeUnitOption)" *ngFor="let freeUnitOption of freeunits; trackBy: trackFreeUnitById">{{freeUnitOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

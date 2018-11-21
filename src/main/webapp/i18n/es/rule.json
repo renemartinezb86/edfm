@@ -1,0 +1,26 @@
+{
+    "edfmApp": {
+        "rule": {
+            "home": {
+                "title": "Rules",
+                "createLabel": "Crear nuevo Rule",
+                "createOrEditLabel": "Crear o editar Rule"
+            },
+            "created": "Un nuevo Rule ha sido creado con el identificador {{ param }}",
+            "updated": "Un Rule ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Rule ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Rule {{ id }}?"
+            },
+            "detail": {
+                "title": "Rule"
+            },
+            "ruleId": "Rule Id",
+            "ruleType": "Rule Type",
+            "definition": "Definition",
+            "scenario": "Scenario",
+            "detail": "Detail",
+            "productOffering": "Product Offering"
+        }
+    }
+}

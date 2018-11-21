@@ -1,0 +1,11 @@
+{
+    "edfmApp": {
+        "SheetType": {
+            "null": "",
+            "PO": "PO",
+            "TEMPLATE": "TEMPLATE",
+            "CONFIG": "CONFIG",
+            "RULE": "RULE"
+        }
+    }
+}

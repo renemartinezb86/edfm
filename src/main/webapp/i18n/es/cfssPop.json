@@ -1,0 +1,24 @@
+{
+    "edfmApp": {
+        "cfssPop": {
+            "home": {
+                "title": "Cfss Pops",
+                "createLabel": "Crear nuevo Cfss Pop",
+                "createOrEditLabel": "Crear o editar Cfss Pop"
+            },
+            "created": "Un nuevo Cfss Pop ha sido creado con el identificador {{ param }}",
+            "updated": "Un Cfss Pop ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Cfss Pop ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Cfss Pop {{ id }}?"
+            },
+            "detail": {
+                "title": "Cfss Pop"
+            },
+            "cfssPopType": "Cfss Pop Type",
+            "characteristic": "Characteristic",
+            "value": "Value",
+            "productOffering": "Product Offering"
+        }
+    }
+}

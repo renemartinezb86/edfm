@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="networkResource">
+            <h2><span jhiTranslate="edfmApp.networkResource.detail.title">Network Resource</span> {{networkResource.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.networkResource.name">Name</span></dt>
+                <dd>
+                    <span>{{networkResource.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.networkResource.networkParameter">Network Parameter</span></dt>
+                <dd>
+                    <span *ngFor="let networkParameter of networkResource.networkParameters; let last = last">
+                        <a [routerLink]="['/network-parameter', networkParameter?.id, 'view' ]">{{networkParameter.name}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/network-resource', networkResource.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

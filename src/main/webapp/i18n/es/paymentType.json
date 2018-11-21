@@ -1,0 +1,9 @@
+{
+    "edfmApp": {
+        "PaymentType": {
+            "null": "",
+            "Cash": "Cash",
+            "Bill": "Bill"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "edfmApp": {
+        "networkParameter": {
+            "home": {
+                "title": "Network Parameters",
+                "createLabel": "Crear nuevo Network Parameter",
+                "createOrEditLabel": "Crear o editar Network Parameter"
+            },
+            "created": "Un nuevo Network Parameter ha sido creado con el identificador {{ param }}",
+            "updated": "Un Network Parameter ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Network Parameter ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Network Parameter {{ id }}?"
+            },
+            "detail": {
+                "title": "Network Parameter"
+            },
+            "name": "Name",
+            "type": "Type",
+            "value": "Value",
+            "networkResource": "Network Resource"
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="resource">
+            <h2><span jhiTranslate="edfmApp.resource.detail.title">Resource</span> {{resource.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.resource.name">Name</span></dt>
+                <dd>
+                    <span>{{resource.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.resource.resourceType">Resource Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'edfmApp.ResourceType.' + resource.resourceType}}">{{resource.resourceType}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.resource.relatedItem">Related Item</span></dt>
+                <dd>
+                    <span>{{resource.relatedItem}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.resource.relatedItemCharacteristic">Related Item Characteristic</span></dt>
+                <dd>
+                    <span>{{resource.relatedItemCharacteristic}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/resource', resource.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+    "edfmApp": {
+        "bucoVersion": {
+            "home": {
+                "title": "Buco Versions",
+                "createLabel": "Crear nuevo Buco Version",
+                "createOrEditLabel": "Crear o editar Buco Version"
+            },
+            "created": "Un nuevo Buco Version ha sido creado con el identificador {{ param }}",
+            "updated": "Un Buco Version ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Buco Version ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Buco Version {{ id }}?"
+            },
+            "detail": {
+                "title": "Buco Version"
+            },
+            "name": "Name",
+            "fileName": "File Name",
+            "createdDate": "Created Date"
+        }
+    }
+}

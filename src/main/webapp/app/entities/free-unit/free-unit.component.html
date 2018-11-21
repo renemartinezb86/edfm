@@ -1,0 +1,60 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="edfmApp.freeUnit.home.title">Free Units</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-free-unit" [routerLink]="['/free-unit/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="edfmApp.freeUnit.home.createLabel">
+            Create new Free Unit
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="freeUnits">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="name"><span jhiTranslate="edfmApp.freeUnit.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="freeUnitType"><span jhiTranslate="edfmApp.freeUnit.freeUnitType">Free Unit Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="units"><span jhiTranslate="edfmApp.freeUnit.units">Units</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="amount"><span jhiTranslate="edfmApp.freeUnit.amount">Amount</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let freeUnit of freeUnits ;trackBy: trackId">
+                <td><a [routerLink]="['/free-unit', freeUnit.id, 'view' ]">{{freeUnit.id}}</a></td>
+                <td>{{freeUnit.name}}</td>
+                <td jhiTranslate="{{'edfmApp.FreeUnitType.' + freeUnit.freeUnitType}}">{{freeUnit.freeUnitType}}</td>
+                <td>{{freeUnit.units}}</td>
+                <td>{{freeUnit.amount}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/free-unit', freeUnit.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/free-unit', freeUnit.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'free-unit/'+ freeUnit.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{
+    "edfmApp": {
+        "poPrice": {
+            "home": {
+                "title": "Po Prices",
+                "createLabel": "Crear nuevo Po Price",
+                "createOrEditLabel": "Crear o editar Po Price"
+            },
+            "created": "Un nuevo Po Price ha sido creado con el identificador {{ param }}",
+            "updated": "Un Po Price ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Po Price ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Po Price {{ id }}?"
+            },
+            "detail": {
+                "title": "Po Price"
+            },
+            "poPriceType": "Po Price Type",
+            "amount": "Amount",
+            "paymentType": "Payment Type",
+            "showInBill": "Show In Bill",
+            "payInAdvance": "Pay In Advance",
+            "billOnSuspension": "Bill On Suspension",
+            "multiDiscount": "Multi Discount",
+            "productOffering": "Product Offering"
+        }
+    }
+}

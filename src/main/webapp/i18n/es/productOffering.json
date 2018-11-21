@@ -1,0 +1,31 @@
+{
+    "edfmApp": {
+        "productOffering": {
+            "home": {
+                "title": "Product Offerings",
+                "createLabel": "Crear nuevo Product Offering",
+                "createOrEditLabel": "Crear o editar Product Offering"
+            },
+            "created": "Un nuevo Product Offering ha sido creado con el identificador {{ param }}",
+            "updated": "Un Product Offering ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Product Offering ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Product Offering {{ id }}?"
+            },
+            "detail": {
+                "title": "Product Offering"
+            },
+            "poId": "Po Id",
+            "name": "Name",
+            "comercialName": "Comercial Name",
+            "poPrice": "Po Price",
+            "bucoSheet": "Buco Sheet",
+            "rules": "Rules",
+            "resource": "Resource",
+            "networkResources": "Network Resources",
+            "service": "Service",
+            "cfssPop": "Cfss Pop",
+            "freeUnit": "Free Unit"
+        }
+    }
+}

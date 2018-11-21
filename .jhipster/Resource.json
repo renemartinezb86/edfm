@@ -1,0 +1,40 @@
+{
+    "name": "Resource",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resourceType",
+            "fieldType": "ResourceType",
+            "fieldValues": "Availability,Validation,Automatic,Price,Eligibility"
+        },
+        {
+            "fieldName": "relatedItem",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "relatedItemCharacteristic",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "productOffering",
+            "otherEntityName": "productOffering",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "resource"
+        }
+    ],
+    "changelogDate": "20181121205446",
+    "entityTableName": "resource",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

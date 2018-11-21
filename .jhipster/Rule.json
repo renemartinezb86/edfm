@@ -1,0 +1,44 @@
+{
+    "name": "Rule",
+    "fields": [
+        {
+            "fieldName": "ruleId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ruleType",
+            "fieldType": "RuleType",
+            "fieldValues": "Availability,Validation,Automatic,Price,Eligibility"
+        },
+        {
+            "fieldName": "definition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "scenario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "detail",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "productOffering",
+            "otherEntityName": "productOffering",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "rules"
+        }
+    ],
+    "changelogDate": "20181121205443",
+    "entityTableName": "rule",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="bucoVersion">
+            <h2><span jhiTranslate="edfmApp.bucoVersion.detail.title">Buco Version</span> {{bucoVersion.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.bucoVersion.name">Name</span></dt>
+                <dd>
+                    <span>{{bucoVersion.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.bucoVersion.fileName">File Name</span></dt>
+                <dd>
+                    <span>{{bucoVersion.fileName}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.bucoVersion.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{bucoVersion.createdDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/buco-version', bucoVersion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,20 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entidades",
+                "bucoVersion": "Buco Version",
+                "bucoSheet": "Buco Sheet",
+                "productOffering": "Product Offering",
+                "poCharacteristic": "PO Characteristic",
+                "service": "Service",
+                "cfssPop": "Cfss Pop",
+                "rule": "Rule",
+                "networkResource": "Network Resource",
+                "networkParameter": "Network Parameter",
+                "resource": "Resource",
+                "poPrice": "Po Price",
+                "freeUnit": "Free Unit",
+                "chargingSystem": "Charging System",
+                "bscs": "Bscs",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="poPrice">
+            <h2><span jhiTranslate="edfmApp.poPrice.detail.title">Po Price</span> {{poPrice.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.poPrice.poPriceType">Po Price Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'edfmApp.PoPriceType.' + poPrice.poPriceType}}">{{poPrice.poPriceType}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.poPrice.amount">Amount</span></dt>
+                <dd>
+                    <span>{{poPrice.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.poPrice.paymentType">Payment Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'edfmApp.PaymentType.' + poPrice.paymentType}}">{{poPrice.paymentType}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.poPrice.showInBill">Show In Bill</span></dt>
+                <dd>
+                    <span>{{poPrice.showInBill}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.poPrice.payInAdvance">Pay In Advance</span></dt>
+                <dd>
+                    <span>{{poPrice.payInAdvance}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.poPrice.billOnSuspension">Bill On Suspension</span></dt>
+                <dd>
+                    <span>{{poPrice.billOnSuspension}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.poPrice.multiDiscount">Multi Discount</span></dt>
+                <dd>
+                    <span>{{poPrice.multiDiscount}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/po-price', poPrice.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
