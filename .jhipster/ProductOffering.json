@@ -1,0 +1,90 @@
+{
+    "name": "ProductOffering",
+    "fields": [
+        {
+            "fieldName": "poId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comercialName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "poPrice",
+            "otherEntityName": "poPrice",
+            "otherEntityField": "value",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "productOffering(poId)"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "bucoSheet",
+            "otherEntityName": "bucoSheet",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "productOffering",
+            "relationshipName": "rules",
+            "otherEntityName": "rule",
+            "otherEntityField": "ruleId",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "productOffering",
+            "relationshipName": "resource",
+            "otherEntityName": "resource",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "productOffering",
+            "relationshipName": "networkResources",
+            "otherEntityName": "networkResource",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "productOffering",
+            "relationshipName": "service",
+            "otherEntityName": "service",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "productOffering",
+            "relationshipName": "cfssPop",
+            "otherEntityName": "cfssPop",
+            "otherEntityField": "value",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "productOffering",
+            "relationshipName": "freeUnit",
+            "otherEntityName": "freeUnit",
+            "otherEntityField": "name",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20181121205439",
+    "entityTableName": "product_offering",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="bucoSheet">
+            <h2><span jhiTranslate="edfmApp.bucoSheet.detail.title">Buco Sheet</span> {{bucoSheet.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.bucoSheet.sheetName">Sheet Name</span></dt>
+                <dd>
+                    <span>{{bucoSheet.sheetName}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.bucoSheet.sheetType">Sheet Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'edfmApp.SheetType.' + bucoSheet.sheetType}}">{{bucoSheet.sheetType}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.bucoSheet.bucoVersion">Buco Version</span></dt>
+                <dd>
+                    <div *ngIf="bucoSheet.bucoVersion">
+                        <a [routerLink]="['/buco-version', bucoSheet.bucoVersion?.id, 'view']">{{bucoSheet.bucoVersion?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/buco-sheet', bucoSheet.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

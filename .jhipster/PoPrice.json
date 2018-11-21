@@ -1,0 +1,53 @@
+{
+    "name": "PoPrice",
+    "fields": [
+        {
+            "fieldName": "poPriceType",
+            "fieldType": "PoPriceType",
+            "fieldValues": "Recurring,OneShot"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "paymentType",
+            "fieldType": "PaymentType",
+            "fieldValues": "Cash,Bill"
+        },
+        {
+            "fieldName": "showInBill",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "payInAdvance",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "billOnSuspension",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "multiDiscount",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "productOffering",
+            "otherEntityName": "productOffering",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "poPrice"
+        }
+    ],
+    "changelogDate": "20181121205447",
+    "entityTableName": "po_price",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

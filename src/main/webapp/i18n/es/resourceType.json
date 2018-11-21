@@ -1,0 +1,12 @@
+{
+    "edfmApp": {
+        "ResourceType": {
+            "null": "",
+            "Availability": "Availability",
+            "Validation": "Validation",
+            "Automatic": "Automatic",
+            "Price": "Price",
+            "Eligibility": "Eligibility"
+        }
+    }
+}

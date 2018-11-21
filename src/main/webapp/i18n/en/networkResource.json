@@ -1,0 +1,23 @@
+{
+    "edfmApp": {
+        "networkResource": {
+            "home": {
+                "title": "Network Resources",
+                "createLabel": "Create a new Network Resource",
+                "createOrEditLabel": "Create or edit a Network Resource"
+            },
+            "created": "A new Network Resource is created with identifier {{ param }}",
+            "updated": "A Network Resource is updated with identifier {{ param }}",
+            "deleted": "A Network Resource is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Network Resource {{ id }}?"
+            },
+            "detail": {
+                "title": "Network Resource"
+            },
+            "name": "Name",
+            "networkParameter": "Network Parameter",
+            "productOffering": "Product Offering"
+        }
+    }
+}

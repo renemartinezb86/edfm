@@ -1,0 +1,20 @@
+{
+    "edfmApp": {
+        "ServiceType": {
+            "null": "",
+            "Basic": "Basic",
+            "Barring": "Barring",
+            "Service": "Service",
+            "Voice": "Voice",
+            "SMS": "SMS",
+            "Data": "Data",
+            "LDIVoice": "LDIVoice",
+            "LDISMS": "LDISMS",
+            "VoiceRoaming": "VoiceRoaming",
+            "SMSRoaming": "SMSRoaming",
+            "DataRoaming": "DataRoaming",
+            "RoamingTAPIN": "RoamingTAPIN",
+            "VASBalance": "VASBalance"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "edfmApp": {
+        "pOCharacteristic": {
+            "home": {
+                "title": "PO Characteristics",
+                "createLabel": "Crear nuevo PO Characteristic",
+                "createOrEditLabel": "Crear o editar PO Characteristic"
+            },
+            "created": "Un nuevo PO Characteristic ha sido creado con el identificador {{ param }}",
+            "updated": "Un PO Characteristic ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un PO Characteristic ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar PO Characteristic {{ id }}?"
+            },
+            "detail": {
+                "title": "PO Characteristic"
+            },
+            "name": "Name",
+            "value": "Value",
+            "productOffering": "Product Offering"
+        }
+    }
+}

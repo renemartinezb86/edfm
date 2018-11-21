@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-service-heading" jhiTranslate="edfmApp.service.home.createOrEditLabel">Create or edit a Service</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!service.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="service.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.service.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="service.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.service.serviceType" for="field_serviceType">Service Type</label>
+                    <select class="form-control" name="serviceType" [(ngModel)]="service.serviceType" id="field_serviceType" >
+                        <option value="Basic">{{'edfmApp.ServiceType.Basic' | translate}}</option>
+                        <option value="Barring">{{'edfmApp.ServiceType.Barring' | translate}}</option>
+                        <option value="Service">{{'edfmApp.ServiceType.Service' | translate}}</option>
+                        <option value="Voice">{{'edfmApp.ServiceType.Voice' | translate}}</option>
+                        <option value="SMS">{{'edfmApp.ServiceType.SMS' | translate}}</option>
+                        <option value="Data">{{'edfmApp.ServiceType.Data' | translate}}</option>
+                        <option value="LDIVoice">{{'edfmApp.ServiceType.LDIVoice' | translate}}</option>
+                        <option value="LDISMS">{{'edfmApp.ServiceType.LDISMS' | translate}}</option>
+                        <option value="VoiceRoaming">{{'edfmApp.ServiceType.VoiceRoaming' | translate}}</option>
+                        <option value="SMSRoaming">{{'edfmApp.ServiceType.SMSRoaming' | translate}}</option>
+                        <option value="DataRoaming">{{'edfmApp.ServiceType.DataRoaming' | translate}}</option>
+                        <option value="RoamingTAPIN">{{'edfmApp.ServiceType.RoamingTAPIN' | translate}}</option>
+                        <option value="VASBalance">{{'edfmApp.ServiceType.VASBalance' | translate}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity ProductOffering.
+    -->
+    <changeSet id="20181121205439-1" author="jhipster">
+        <createTable tableName="product_offering">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="po_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="comercial_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="po_price_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_product_offering_po_price_id" />
+            </column>
+            <column name="buco_sheet_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="product_offering_rules">
+            <column name="rules_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_offerings_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="product_offerings_id, rules_id" tableName="product_offering_rules"/>
+        
+        <createTable tableName="product_offering_resource">
+            <column name="resources_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_offerings_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="product_offerings_id, resources_id" tableName="product_offering_resource"/>
+        
+        <createTable tableName="product_offering_network_resources">
+            <column name="network_resources_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_offerings_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="product_offerings_id, network_resources_id" tableName="product_offering_network_resources"/>
+        
+        <createTable tableName="product_offering_service">
+            <column name="services_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_offerings_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="product_offerings_id, services_id" tableName="product_offering_service"/>
+        
+        <createTable tableName="product_offering_cfss_pop">
+            <column name="cfss_pops_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_offerings_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="product_offerings_id, cfss_pops_id" tableName="product_offering_cfss_pop"/>
+        
+        <createTable tableName="product_offering_free_unit">
+            <column name="free_units_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_offerings_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="product_offerings_id, free_units_id" tableName="product_offering_free_unit"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="networkParameter">
+            <h2><span jhiTranslate="edfmApp.networkParameter.detail.title">Network Parameter</span> {{networkParameter.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.networkParameter.name">Name</span></dt>
+                <dd>
+                    <span>{{networkParameter.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.networkParameter.type">Type</span></dt>
+                <dd>
+                    <span>{{networkParameter.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.networkParameter.value">Value</span></dt>
+                <dd>
+                    <span>{{networkParameter.value}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/network-parameter', networkParameter.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

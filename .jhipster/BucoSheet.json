@@ -1,0 +1,31 @@
+{
+    "name": "BucoSheet",
+    "fields": [
+        {
+            "fieldName": "sheetName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sheetType",
+            "fieldType": "SheetType",
+            "fieldValues": "PO,TEMPLATE,CONFIG,RULE"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "bucoVersion",
+            "otherEntityName": "bucoVersion",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20181121205438",
+    "entityTableName": "buco_sheet",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

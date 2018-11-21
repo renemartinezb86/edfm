@@ -5,6 +5,26 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205437_added_entity_BucoVersion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205438_added_entity_BucoSheet.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205439_added_entity_ProductOffering.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205440_added_entity_POCharacteristic.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205441_added_entity_Service.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205442_added_entity_CfssPop.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205443_added_entity_Rule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205444_added_entity_NetworkResource.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205445_added_entity_NetworkParameter.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205446_added_entity_Resource.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205447_added_entity_PoPrice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205448_added_entity_FreeUnit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205449_added_entity_ChargingSystem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205450_added_entity_Bscs.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20181121205438_added_entity_constraints_BucoSheet.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205439_added_entity_constraints_ProductOffering.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205440_added_entity_constraints_POCharacteristic.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205444_added_entity_constraints_NetworkResource.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205449_added_entity_constraints_ChargingSystem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121205450_added_entity_constraints_Bscs.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

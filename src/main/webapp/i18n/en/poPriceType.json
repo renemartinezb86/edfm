@@ -1,0 +1,9 @@
+{
+    "edfmApp": {
+        "PoPriceType": {
+            "null": "",
+            "Recurring": "Recurring",
+            "OneShot": "OneShot"
+        }
+    }
+}

@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="productOffering">
+            <h2><span jhiTranslate="edfmApp.productOffering.detail.title">Product Offering</span> {{productOffering.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.productOffering.poId">Po Id</span></dt>
+                <dd>
+                    <span>{{productOffering.poId}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.productOffering.name">Name</span></dt>
+                <dd>
+                    <span>{{productOffering.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.productOffering.comercialName">Comercial Name</span></dt>
+                <dd>
+                    <span>{{productOffering.comercialName}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.productOffering.poPrice">Po Price</span></dt>
+                <dd>
+                    <div *ngIf="productOffering.poPrice">
+                        <a [routerLink]="['/po-price', productOffering.poPrice?.id, 'view']">{{productOffering.poPrice?.value}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.productOffering.bucoSheet">Buco Sheet</span></dt>
+                <dd>
+                    <div *ngIf="productOffering.bucoSheet">
+                        <a [routerLink]="['/buco-sheet', productOffering.bucoSheet?.id, 'view']">{{productOffering.bucoSheet?.name}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.productOffering.rules">Rules</span></dt>
+                <dd>
+                    <span *ngFor="let rules of productOffering.rules; let last = last">
+                        <a [routerLink]="['/rule', rules?.id, 'view' ]">{{rules.ruleId}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.productOffering.resource">Resource</span></dt>
+                <dd>
+                    <span *ngFor="let resource of productOffering.resources; let last = last">
+                        <a [routerLink]="['/resource', resource?.id, 'view' ]">{{resource.name}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.productOffering.networkResources">Network Resources</span></dt>
+                <dd>
+                    <span *ngFor="let networkResources of productOffering.networkResources; let last = last">
+                        <a [routerLink]="['/network-resource', networkResources?.id, 'view' ]">{{networkResources.name}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.productOffering.service">Service</span></dt>
+                <dd>
+                    <span *ngFor="let service of productOffering.services; let last = last">
+                        <a [routerLink]="['/service', service?.id, 'view' ]">{{service.name}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.productOffering.cfssPop">Cfss Pop</span></dt>
+                <dd>
+                    <span *ngFor="let cfssPop of productOffering.cfssPops; let last = last">
+                        <a [routerLink]="['/cfss-pop', cfssPop?.id, 'view' ]">{{cfssPop.value}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.productOffering.freeUnit">Free Unit</span></dt>
+                <dd>
+                    <span *ngFor="let freeUnit of productOffering.freeUnits; let last = last">
+                        <a [routerLink]="['/free-unit', freeUnit?.id, 'view' ]">{{freeUnit.name}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/product-offering', productOffering.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{
+    "edfmApp": {
+        "FreeUnitType": {
+            "null": "",
+            "RecurringFee": "RecurringFee",
+            "SMS": "SMS",
+            "Data": "Data",
+            "AutoRefill": "AutoRefill",
+            "RRSS": "RRSS"
+        }
+    }
+}

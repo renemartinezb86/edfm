@@ -1,0 +1,46 @@
+{
+    "name": "Service",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "serviceType",
+            "fieldType": "ServiceType",
+            "fieldValues": "Basic,Barring,Service,Voice,SMS,Data,LDIVoice,LDISMS,VoiceRoaming,SMSRoaming,DataRoaming,RoamingTAPIN,VASBalance"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "chargingSystem",
+            "otherEntityName": "chargingSystem",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "service"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "bscs",
+            "otherEntityName": "bscs",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "service"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "productOffering",
+            "otherEntityName": "productOffering",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "service"
+        }
+    ],
+    "changelogDate": "20181121205441",
+    "entityTableName": "service",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

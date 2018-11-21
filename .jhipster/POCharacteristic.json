@@ -1,0 +1,30 @@
+{
+    "name": "POCharacteristic",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "productOffering",
+            "otherEntityName": "productOffering",
+            "otherEntityField": "poId"
+        }
+    ],
+    "changelogDate": "20181121205440",
+    "entityTableName": "po_characteristic",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

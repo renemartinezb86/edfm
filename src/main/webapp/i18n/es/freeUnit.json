@@ -1,0 +1,26 @@
+{
+    "edfmApp": {
+        "freeUnit": {
+            "home": {
+                "title": "Free Units",
+                "createLabel": "Crear nuevo Free Unit",
+                "createOrEditLabel": "Crear o editar Free Unit"
+            },
+            "created": "Un nuevo Free Unit ha sido creado con el identificador {{ param }}",
+            "updated": "Un Free Unit ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Free Unit ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Free Unit {{ id }}?"
+            },
+            "detail": {
+                "title": "Free Unit"
+            },
+            "name": "Name",
+            "freeUnitType": "Free Unit Type",
+            "units": "Units",
+            "amount": "Amount",
+            "chargingSystem": "Charging System",
+            "productOffering": "Product Offering"
+        }
+    }
+}

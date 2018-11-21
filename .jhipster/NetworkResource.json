@@ -1,0 +1,35 @@
+{
+    "name": "NetworkResource",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "networkResource",
+            "relationshipName": "networkParameter",
+            "otherEntityName": "networkParameter",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "productOffering",
+            "otherEntityName": "productOffering",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "networkResources"
+        }
+    ],
+    "changelogDate": "20181121205444",
+    "entityTableName": "network_resource",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

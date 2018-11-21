@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cfssPop">
+            <h2><span jhiTranslate="edfmApp.cfssPop.detail.title">Cfss Pop</span> {{cfssPop.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="edfmApp.cfssPop.cfssPopType">Cfss Pop Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'edfmApp.CfssPopType.' + cfssPop.cfssPopType}}">{{cfssPop.cfssPopType}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.cfssPop.characteristic">Characteristic</span></dt>
+                <dd>
+                    <span>{{cfssPop.characteristic}}</span>
+                </dd>
+                <dt><span jhiTranslate="edfmApp.cfssPop.value">Value</span></dt>
+                <dd>
+                    <span>{{cfssPop.value}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cfss-pop', cfssPop.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+    "edfmApp": {
+        "bucoSheet": {
+            "home": {
+                "title": "Buco Sheets",
+                "createLabel": "Create a new Buco Sheet",
+                "createOrEditLabel": "Create or edit a Buco Sheet"
+            },
+            "created": "A new Buco Sheet is created with identifier {{ param }}",
+            "updated": "A Buco Sheet is updated with identifier {{ param }}",
+            "deleted": "A Buco Sheet is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Buco Sheet {{ id }}?"
+            },
+            "detail": {
+                "title": "Buco Sheet"
+            },
+            "sheetName": "Sheet Name",
+            "sheetType": "Sheet Type",
+            "bucoVersion": "Buco Version"
+        }
+    }
+}

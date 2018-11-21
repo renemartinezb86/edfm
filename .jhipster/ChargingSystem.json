@@ -1,0 +1,44 @@
+{
+    "name": "ChargingSystem",
+    "fields": [
+        {
+            "fieldName": "serviceClassId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "offerTemplate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "characteristicName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "service",
+            "otherEntityName": "service",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "chargingSystem(offerTemplate)"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "freeUnit",
+            "otherEntityName": "freeUnit",
+            "otherEntityField": "name",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "chargingSystem(offerTemplate)"
+        }
+    ],
+    "changelogDate": "20181121205449",
+    "entityTableName": "charging_system",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

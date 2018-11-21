@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-buco-sheet-heading" jhiTranslate="edfmApp.bucoSheet.home.createOrEditLabel">Create or edit a Buco Sheet</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!bucoSheet.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="bucoSheet.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.bucoSheet.sheetName" for="field_sheetName">Sheet Name</label>
+                    <input type="text" class="form-control" name="sheetName" id="field_sheetName"
+                        [(ngModel)]="bucoSheet.sheetName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.bucoSheet.sheetType" for="field_sheetType">Sheet Type</label>
+                    <select class="form-control" name="sheetType" [(ngModel)]="bucoSheet.sheetType" id="field_sheetType" >
+                        <option value="PO">{{'edfmApp.SheetType.PO' | translate}}</option>
+                        <option value="TEMPLATE">{{'edfmApp.SheetType.TEMPLATE' | translate}}</option>
+                        <option value="CONFIG">{{'edfmApp.SheetType.CONFIG' | translate}}</option>
+                        <option value="RULE">{{'edfmApp.SheetType.RULE' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="edfmApp.bucoSheet.bucoVersion" for="field_bucoVersion">Buco Version</label>
+                    <select class="form-control" id="field_bucoVersion" name="bucoVersion" [(ngModel)]="bucoSheet.bucoVersion" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="bucoVersionOption.id === bucoSheet.bucoVersion?.id ? bucoSheet.bucoVersion : bucoVersionOption" *ngFor="let bucoVersionOption of bucoversions; trackBy: trackBucoVersionById">{{bucoVersionOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

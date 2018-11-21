@@ -1,0 +1,22 @@
+{
+    "edfmApp": {
+        "bscs": {
+            "home": {
+                "title": "Bscs",
+                "createLabel": "Create a new Bscs",
+                "createOrEditLabel": "Create or edit a Bscs"
+            },
+            "created": "A new Bscs is created with identifier {{ param }}",
+            "updated": "A Bscs is updated with identifier {{ param }}",
+            "deleted": "A Bscs is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Bscs {{ id }}?"
+            },
+            "detail": {
+                "title": "Bscs"
+            },
+            "services": "Services",
+            "service": "Service"
+        }
+    }
+}

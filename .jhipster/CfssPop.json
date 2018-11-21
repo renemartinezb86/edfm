@@ -1,0 +1,36 @@
+{
+    "name": "CfssPop",
+    "fields": [
+        {
+            "fieldName": "cfssPopType",
+            "fieldType": "CfssPopType",
+            "fieldValues": "Usage"
+        },
+        {
+            "fieldName": "characteristic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "productOffering",
+            "otherEntityName": "productOffering",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "cfssPop"
+        }
+    ],
+    "changelogDate": "20181121205442",
+    "entityTableName": "cfss_pop",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

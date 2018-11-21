@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ProductOffering.
+    -->
+    <changeSet id="20181121205439-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="po_price_id"
+                                 baseTableName="product_offering"
+                                 constraintName="fk_product_offering_po_price_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="po_price"/>
+
+        <addForeignKeyConstraint baseColumnNames="buco_sheet_id"
+                                 baseTableName="product_offering"
+                                 constraintName="fk_product_offering_buco_sheet_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="buco_sheet"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_offerings_id"
+                                 baseTableName="product_offering_rules"
+                                 constraintName="fk_product_offering_rules_product_offerings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_offering"/>
+        <addForeignKeyConstraint baseColumnNames="rules_id"
+                                 baseTableName="product_offering_rules"
+                                 constraintName="fk_product_offering_rules_rules_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rule"/>
+        
+        <addForeignKeyConstraint baseColumnNames="product_offerings_id"
+                                 baseTableName="product_offering_resource"
+                                 constraintName="fk_product_offering_resource_product_offerings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_offering"/>
+        <addForeignKeyConstraint baseColumnNames="resources_id"
+                                 baseTableName="product_offering_resource"
+                                 constraintName="fk_product_offering_resource_resources_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="resource"/>
+        
+        <addForeignKeyConstraint baseColumnNames="product_offerings_id"
+                                 baseTableName="product_offering_network_resources"
+                                 constraintName="fk_product_offering_network_resources_product_offerings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_offering"/>
+        <addForeignKeyConstraint baseColumnNames="network_resources_id"
+                                 baseTableName="product_offering_network_resources"
+                                 constraintName="fk_product_offering_network_resources_network_resources_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="network_resource"/>
+        
+        <addForeignKeyConstraint baseColumnNames="product_offerings_id"
+                                 baseTableName="product_offering_service"
+                                 constraintName="fk_product_offering_service_product_offerings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_offering"/>
+        <addForeignKeyConstraint baseColumnNames="services_id"
+                                 baseTableName="product_offering_service"
+                                 constraintName="fk_product_offering_service_services_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="service"/>
+        
+        <addForeignKeyConstraint baseColumnNames="product_offerings_id"
+                                 baseTableName="product_offering_cfss_pop"
+                                 constraintName="fk_product_offering_cfss_pop_product_offerings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_offering"/>
+        <addForeignKeyConstraint baseColumnNames="cfss_pops_id"
+                                 baseTableName="product_offering_cfss_pop"
+                                 constraintName="fk_product_offering_cfss_pop_cfss_pops_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cfss_pop"/>
+        
+        <addForeignKeyConstraint baseColumnNames="product_offerings_id"
+                                 baseTableName="product_offering_free_unit"
+                                 constraintName="fk_product_offering_free_unit_product_offerings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_offering"/>
+        <addForeignKeyConstraint baseColumnNames="free_units_id"
+                                 baseTableName="product_offering_free_unit"
+                                 constraintName="fk_product_offering_free_unit_free_units_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="free_unit"/>
+        
+    </changeSet>
+</databaseChangeLog>
